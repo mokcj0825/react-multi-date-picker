@@ -23,7 +23,9 @@ export default function getRangeClass(
       second = selectedDate[1];
 
     if (selectedDate.length === 1) {
-      if (isSameDate(date, first, onlyMonthPicker)) names.push("rmdp-range");
+      if (isSameDate(date, first, onlyMonthPicker)) {
+        names.push("rmdp-range", "start", "end");
+      }
     } else if (selectedDate.length === 2) {
       const [strFirst, strSecond] = [first, second].map((date) =>
         formatDate(date, format)

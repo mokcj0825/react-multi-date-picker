@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>rmdp demo</title>
+    <style>
+      body { font-family: sans-serif; padding: 24px; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <!-- React UMD -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Required externals for build/browser.min.js -->
+    <script src="https://cdn.jsdelivr.net/npm/date-object@latest/dist/umd/date-object.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-element-popper@latest/build/browser.min.js"></script>
+
+    <!-- 你的本地构建产物 -->
+    <script src="./build/browser.min.js"></script>
+
+    <script>
+      const { DatePicker } = ReactMultiDatePicker;
+
+      const App = React.createElement(DatePicker, { range: true });
+      const el = document.getElementById("app");
+
+      if (ReactDOM.createRoot) {
+        ReactDOM.createRoot(el).render(App);
+      } else {
+        ReactDOM.render(App, el);
+      }
+    </script>
+  </body>
+</html>
